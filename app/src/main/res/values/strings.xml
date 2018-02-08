@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SharedElementTransitionTest</string>
+    <string name="fragment_image_transition">fragment image transition</string>
 </resources>

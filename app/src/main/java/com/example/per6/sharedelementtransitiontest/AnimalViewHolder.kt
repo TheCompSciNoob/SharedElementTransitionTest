@@ -14,6 +14,7 @@ import kotlinx.android.synthetic.main.recycler_view_image_layout.view.*
 class AnimalViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
 
     fun bind(imgRes : Int, onClickListener: View.OnClickListener) = with(itemView) {
+        itemView.animalImageView.transitionName = "${imgRes}"
         itemView.setOnClickListener(onClickListener)
         Glide.with(context)
                 .load(imgRes)

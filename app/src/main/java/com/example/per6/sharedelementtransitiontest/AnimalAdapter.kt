@@ -4,6 +4,8 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import kotlinx.android.synthetic.main.recycler_view_image_layout.view.*
 
 /**
  * Created by per6 on 2/6/18.
@@ -16,7 +18,7 @@ class AnimalAdapter(val imageResources : List<Int>, val listener: AnimalOnItemCl
 
     override fun onBindViewHolder(holder: AnimalViewHolder?, position: Int) {
         holder?.bind(imageResources[position], View.OnClickListener {
-            listener.onItemClick(position)
+            listener.onItemClick(holder.itemView.animalImageView, position)
         })
     }
 
@@ -28,6 +30,6 @@ class AnimalAdapter(val imageResources : List<Int>, val listener: AnimalOnItemCl
 
     interface AnimalOnItemClickListener {
 
-        fun onItemClick(position : Int)
+        fun onItemClick(clickedImageView: ImageView, position : Int)
     }
 }
